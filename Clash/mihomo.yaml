@@ -97,13 +97,6 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
-  github:
-    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml
-    path: ./ruleset/github.yaml
-    behavior: classical
-    interval: 86400
-    format: yaml
-    type: http
 
 proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
@@ -198,7 +191,6 @@ rules:
   - "RULE-SET,openai,AIGC"
   - "RULE-SET,claude,AIGC"
   - "RULE-SET,steam,PROXY"
-  - "RULE-SET,github,PROXY"
   - "RULE-SET,telegram_domain,Telegram"
   - "RULE-SET,telegram_ip,Telegram"
   - "RULE-SET,google_domain,Google"
