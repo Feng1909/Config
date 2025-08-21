@@ -104,6 +104,20 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
+  zhihuads:
+    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ZhihuAds/ZhihuAds.yaml
+    path: ./ruleset/zhihuads.yaml
+    behavior: classical
+    interval: 86400
+    format: yaml
+    type: http 
+  advertising:
+    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising.yaml
+    path: ./ruleset/advertising.yaml
+    behavior: classical
+    interval: 86400
+    format: yaml
+    type: http 
 
 proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
@@ -193,6 +207,8 @@ proxy-groups:
 rules:
   - "RULE-SET,private,DIRECT"
   - "RULE-SET,bing,DIRECT"
+  - "RULE-SET,zhihuads,REJECT"
+  - "RULE-SET,advertising,REJECT"
   - "RULE-SET,copilot,AIGC"
   - "RULE-SET,github,PROXY"
   - "RULE-SET,bard,AIGC"
