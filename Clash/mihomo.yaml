@@ -21,6 +21,13 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
+  private_ip:
+    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/private.yaml
+    path: ./ruleset/private_ip.yaml
+    behavior: ipcidr
+    interval: 86400
+    format: yaml
+    type: http
   cn_domain:
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.yaml
     path: ./ruleset/cn_domain.yaml
@@ -207,6 +214,7 @@ proxy-groups:
 
 rules:
   - "RULE-SET,private,DIRECT"
+  - "RULE-SET,private_ip,DIRECT"
   - "RULE-SET,bing,DIRECT"
   - "RULE-SET,cn_domain,DIRECT"
   - "RULE-SET,cn_ip,DIRECT"
