@@ -112,6 +112,13 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
+  google:
+    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml
+    path: ./ruleset/google.yaml
+    behavior: classical
+    interval: 86400
+    format: yaml
+    type: http
 
 proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
@@ -203,14 +210,15 @@ rules:
   - "RULE-SET,bing,DIRECT"
   - "RULE-SET,cn_domain,DIRECT"
   - "RULE-SET,cn_ip,DIRECT"
-  - "RULE-SET,copilot,AIGC"
-  - "RULE-SET,bard,AIGC"
-  - "RULE-SET,openai,AIGC"
-  - "RULE-SET,claude,AIGC"
+  - "RULE-SET,copilot,PROXY"
+  - "RULE-SET,bard,PROXY"
+  - "RULE-SET,openai,PROXY"
+  - "RULE-SET,claude,PROXY"
   - "RULE-SET,steam,PROXY"
-  - "RULE-SET,telegram_domain,Telegram"
-  - "RULE-SET,telegram_ip,Telegram"
-  - "RULE-SET,google_domain,Google"
-  - "RULE-SET,google_ip,Google"
+  - "RULE-SET,google,PROXY"
+  # - "RULE-SET,telegram_domain,PROXY"
+  # - "RULE-SET,telegram_ip,PROXY"
+  # - "RULE-SET,google_domain,PROXY"
+  # - "RULE-SET,google_ip,PROXY"
   - "RULE-SET,geolocation-!cn,PROXY"
   - "MATCH,PROXY"
