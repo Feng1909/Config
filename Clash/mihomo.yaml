@@ -233,6 +233,8 @@ rules:
   - "DOMAIN-SUFFIX,hf.co,DIRECT"
   - "DOMAIN-SUFFIX,freeconvert.com,DIRECT"
   - "DOMAIN-SUFFIX,gh-proxy.com,DIRECT"
+  - "DOMAIN-SUFFIX,ghfast.top,DIRECT"
+  - "DOMAIN-SUFFIX,tailscale.com,DIRECT"
   - "RULE-SET,copilot,PROXY"
   - "RULE-SET,bard,PROXY"
   - "RULE-SET,openai,PROXY"
