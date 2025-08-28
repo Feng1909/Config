@@ -126,6 +126,13 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
+  advertising:
+    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising.yaml
+    path: ./ruleset/advertising.yaml
+    behavior: classical
+    interval: 86400
+    format: yaml
+    type: http
 
 proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
@@ -213,6 +220,7 @@ proxy-groups:
     type: select
 
 rules:
+  - "RULE-SET,advertising,REJECT"
   - "RULE-SET,private,DIRECT"
   - "RULE-SET,private_ip,DIRECT"
   - "RULE-SET,bing,DIRECT"
@@ -220,9 +228,11 @@ rules:
   - "RULE-SET,cn_ip,DIRECT"
   - "DOMAIN-SUFFIX,pytorch.org,DIRECT"
   - "DOMAIN-SUFFIX,anaconda.org,DIRECT"
+  - "DOMAIN-SUFFIX,anaconda.com,DIRECT"
   - "DOMAIN-SUFFIX,hf-mirror.com,DIRECT"
   - "DOMAIN-SUFFIX,hf.co,DIRECT"
   - "DOMAIN-SUFFIX,freeconvert.com,DIRECT"
+  - "DOMAIN-SUFFIX,gh-proxy.com,DIRECT"
   - "RULE-SET,copilot,PROXY"
   - "RULE-SET,bard,PROXY"
   - "RULE-SET,openai,PROXY"
