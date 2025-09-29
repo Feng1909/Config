@@ -252,6 +252,14 @@ proxy-groups:
       interval: 20 # 缩短检查间隔，确保节点能正常访问 AIGC
     interval: 200
 
+tun:
+  enable: true
+  stack: system          # 推荐 system，比 gvisor 性能高
+  auto-route: true
+  auto-detect-interface: true
+  strict-route: true     # 避免 DIRECT 流量反复经过 TUN
+  mtu: 1500              # 调整 MTU，通常 1400~1500
+
 rules:
   - "RULE-SET,advertising,REJECT"
   - "DOMAIN-SUFFIX,linkedin.com,LOAD-BALANCE-MAIN"
@@ -269,9 +277,9 @@ rules:
   - "DOMAIN-SUFFIX,gh-proxy.com,DIRECT"
   - "DOMAIN-SUFFIX,ghfast.top,DIRECT"
   - "DOMAIN-SUFFIX,tailscale.com,DIRECT"
-  - "RULE-SET,copilot,LOAD-BALANCE-MAIN"
+  - "RULE-SET,copilot,LOAD-BALANCE-AIGC"
   - "RULE-SET,bard,LOAD-BALANCE-MAIN"
-  - "RULE-SET,openai,LOAD-BALANCE-MAIN"
+  - "RULE-SET,openai,LOAD-BALANCE-AIGC"
   - "RULE-SET,claude,LOAD-BALANCE-MAIN"
   - "RULE-SET,steam,LOAD-BALANCE-MAIN"
   - "RULE-SET,google,LOAD-BALANCE-MAIN"
