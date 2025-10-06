@@ -226,7 +226,7 @@ proxy-groups:
     # 1. 筛选纳入负载均衡的节点（复用你现有排除无效节点的规则）
     include-all: true # 包含所有节点
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置 # 排除失效/限流节点
-    filter: (?i)香港|Hong Kong|HK|🇭🇰|新加坡|Singapore|🇸🇬|日本|Japan|🇯🇵 # 仅保留 HK/SG/JP 节点（可自定义）
+    filter: (?i)香港|TW|韩国|首尔|Hong Kong|HK|🇭🇰|KR|新加坡|Singapore|🇸🇬|日本|美|US|UK|Japan|🇯🇵 # 仅保留 HK/SG/JP 节点（可自定义）
     # 2. 负载均衡策略（根据需求选）
     strategy: round-robin # 推荐：优先分配到延迟最低的节点（适合日常）；可选 round-robin（轮询，适合流量均分）
     # 3. 健康检查（核心！确保节点存活）
