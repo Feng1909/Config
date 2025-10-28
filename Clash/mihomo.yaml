@@ -35,44 +35,9 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
-  telegram_domain:
-    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/telegram.yaml
-    path: ./ruleset/telegram_domain.yaml
-    behavior: domain
-    interval: 86400
-    format: yaml
-    type: http
-  google_domain:
-    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google.yaml
-    path: ./ruleset/google_domain.yaml
-    behavior: domain
-    interval: 86400
-    format: yaml
-    type: http
-  geolocation-!cn:
-    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/geolocation-!cn.yaml
-    path: ./ruleset/geolocation-!cn.yaml
-    behavior: domain
-    interval: 86400
-    format: yaml
-    type: http
   cn_ip:
     url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cn.yaml
     path: ./ruleset/cn_ip.yaml
-    behavior: ipcidr
-    interval: 86400
-    format: yaml
-    type: http
-  telegram_ip:
-    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/telegram.yaml
-    path: ./ruleset/telegram_ip.yaml
-    behavior: ipcidr
-    interval: 86400
-    format: yaml
-    type: http
-  google_ip:
-    url: https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/google.yaml
-    path: ./ruleset/google_ip.yaml
     behavior: ipcidr
     interval: 86400
     format: yaml
@@ -84,44 +49,9 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
-  copilot:
-    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Copilot/Copilot.yaml
-    path: ./ruleset/copilot.yaml
-    behavior: classical
-    interval: 86400
-    format: yaml
-    type: http
-  claude:
-    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Claude/Claude.yaml
-    path: ./ruleset/claude.yaml
-    behavior: classical
-    interval: 86400
-    format: yaml
-    type: http
-  bard:
-    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/BardAI/BardAI.yaml
-    path: ./ruleset/bard.yaml
-    behavior: classical
-    interval: 86400
-    format: yaml
-    type: http
-  openai:
-    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml
-    path: ./ruleset/openai.yaml
-    behavior: classical
-    interval: 86400
-    format: yaml
-    type: http
   steam:
     url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml
     path: ./ruleset/steam.yaml
-    behavior: classical
-    interval: 86400
-    format: yaml
-    type: http
-  google:
-    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml
-    path: ./ruleset/google.yaml
     behavior: classical
     interval: 86400
     format: yaml
@@ -138,134 +68,16 @@ proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
+    # filter: (?i)新加坡|Singapore|🇸🇬
     name: PROXY
     type: select
-    proxies:
-      - AUTO
-      - HK AUTO
-      - SG AUTO
-      - JP AUTO
-      - US AUTO
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Urltest.png
-    include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
-    name: AUTO
-    type: url-test
-    interval: 300
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/OpenAI.png
-    name: AIGC
-    type: select
-    proxies:
-      - SG AUTO
-      - JP AUTO
-      - US AUTO
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Telegram.png
-    name: Telegram
-    type: select
-    proxies:
-      - HK AUTO
-      - SG AUTO
-      - JP AUTO
-      - US AUTO
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Google.png
-    name: Google
-    type: select
-    proxies:
-      - HK AUTO
-      - SG AUTO
-      - JP AUTO
-      - US AUTO
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/HK.png
-    include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
-    filter: (?i)香港|Hong Kong|HK|🇭🇰
-    name: HK AUTO
-    type: url-test
-    interval: 300
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/SG.png
-    include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
-    filter: (?i)新加坡|Singapore|🇸🇬
-    name: SG AUTO
-    type: url-test
-    interval: 300
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/JP.png
-    include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
-    filter: (?i)日本|Japan|🇯🇵
-    name: JP AUTO
-    type: url-test
-    interval: 300
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/US.png
-    include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
-    filter: (?i)美国|USA|🇺🇸
-    name: US AUTO
-    type: url-test
-    interval: 300
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Global.png
-    include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
-    proxies:
-      - PROXY
-      - AUTO
-      - AIGC
-      - Telegram
-      - Google
-      - HK AUTO
-      - SG AUTO
-      - JP AUTO
-      - US AUTO
-    name: GLOBAL
-    type: select
-    
-  # 新增 1：常用节点负载均衡（涵盖 HK/SG/JP 优质节点，适合日常浏览）
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/LoadBalance.png # 负载均衡图标（可选）
-    name: LOAD-BALANCE-MAIN # 负载均衡组名称（自定义）
-    type: load-balance # 类型必须为 load-balance
-    # 1. 筛选纳入负载均衡的节点（复用你现有排除无效节点的规则）
-    include-all: true # 包含所有节点
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置 # 排除失效/限流节点
-    filter: (?i)香港|TW|韩国|首尔|Hong Kong|HK|🇭🇰|KR|新加坡|Singapore|🇸🇬|日本|美|US|UK|Japan|🇯🇵 # 仅保留 HK/SG/JP 节点（可自定义）
-    # 2. 负载均衡策略（根据需求选）
-    strategy: round-robin # 推荐：优先分配到延迟最低的节点（适合日常）；可选 round-robin（轮询，适合流量均分）
-    # 3. 健康检查（核心！确保节点存活）
-    health-check:
-      enable: true # 启用健康检查
-      url: https://www.gstatic.com/generate_204 # 健康检查地址（稳定的检测链接）
-      interval: 30 # 健康检查间隔（秒），建议 30~60 秒
-    # 4. 额外参数（可选，优化体验）
-    interval: 300 # 节点状态更新间隔（秒）
-    lazy: false # 非惰性加载（启动时即检测节点）
-  
-  # 新增 2：AIGC 专用负载均衡（仅 US/SG 节点，适合 OpenAI/Claude 等）
-  - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/AIGC.png
-    name: LOAD-BALANCE-AIGC # 自定义名称
-    type: load-balance
-    include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置 # 排除无效节点
-    filter: (?i)美国|USA|🇺🇸|新加坡|Singapore|🇸🇬 # AIGC 服务（如 OpenAI）优先 US/SG 节点
-    strategy: round-robin # AIGC 对延迟敏感，选最小延迟策略
-    health-check:
-      enable: true
-      url: https://chat.openai.com/generate_204 # 直接检测 AIGC 服务地址（更精准）
-      interval: 20 # 缩短检查间隔，确保节点能正常访问 AIGC
-    interval: 200
-
-tun:
-  enable: true
-  stack: system          # 推荐 system，比 gvisor 性能高
-  auto-route: true
-  auto-detect-interface: true
-  strict-route: true     # 避免 DIRECT 流量反复经过 TUN
-  mtu: 1500              # 调整 MTU，通常 1400~1500
 
 rules:
   - "RULE-SET,advertising,REJECT"
-  - "DOMAIN-SUFFIX,linkedin.com,LOAD-BALANCE-MAIN"
   - "RULE-SET,private,DIRECT"
   - "RULE-SET,private_ip,DIRECT"
   - "RULE-SET,bing,DIRECT"
+  - "DOMAIN-SUFFIX,linkedin.com,PROXY"
   - "RULE-SET,cn_domain,DIRECT"
   - "RULE-SET,cn_ip,DIRECT"
   - "DOMAIN-SUFFIX,pytorch.org,DIRECT"
@@ -277,15 +89,6 @@ rules:
   - "DOMAIN-SUFFIX,gh-proxy.com,DIRECT"
   - "DOMAIN-SUFFIX,ghfast.top,DIRECT"
   - "DOMAIN-SUFFIX,tailscale.com,DIRECT"
-  - "RULE-SET,copilot,LOAD-BALANCE-AIGC"
-  - "RULE-SET,bard,LOAD-BALANCE-MAIN"
-  - "RULE-SET,openai,LOAD-BALANCE-AIGC"
-  - "RULE-SET,claude,LOAD-BALANCE-MAIN"
-  - "RULE-SET,steam,LOAD-BALANCE-MAIN"
-  - "RULE-SET,google,LOAD-BALANCE-MAIN"
-  # - "RULE-SET,telegram_domain,PROXY"
-  # - "RULE-SET,telegram_ip,PROXY"
-  # - "RULE-SET,google_domain,PROXY"
-  # - "RULE-SET,google_ip,PROXY"
-  - "RULE-SET,geolocation-!cn,LOAD-BALANCE-MAIN"
-  - "MATCH,LOAD-BALANCE-MAIN"
+  - "DOMAIN-SUFFIX,cdfile.org,DIRECT"
+  - "DOMAIN-SUFFIX,btschool.club,DIRECT"
+  - "MATCH,PROXY"
