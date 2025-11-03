@@ -63,6 +63,13 @@ rule-providers:
     interval: 86400
     format: yaml
     type: http
+  microsoft:
+    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml
+    path: ./ruleset/microsoft.yaml
+    behavior: classical
+    interval: 86400
+    format: yaml
+    type: http
 
 proxy-groups:
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
@@ -76,6 +83,7 @@ rules:
   - "RULE-SET,advertising,REJECT"
   - "RULE-SET,private,DIRECT"
   - "RULE-SET,private_ip,DIRECT"
+  - "RULE-SET,microsoft,DIRECT"
   - "RULE-SET,bing,DIRECT"
   - "DOMAIN-SUFFIX,linkedin.com,PROXY"
   - "RULE-SET,cn_domain,DIRECT"
