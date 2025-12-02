@@ -80,7 +80,7 @@ proxy-groups:
     type: select
 
 rules:
-  - "RULE-SET,advertising,REJECT"
+  # - "RULE-SET,advertising,REJECT"
   - "RULE-SET,private,DIRECT"
   - "RULE-SET,private_ip,DIRECT"
   - "RULE-SET,microsoft,DIRECT"
@@ -95,6 +95,7 @@ rules:
   - "DOMAIN-SUFFIX,hf.co,DIRECT"
   - "DOMAIN-SUFFIX,freeconvert.com,DIRECT"
   - "DOMAIN-SUFFIX,gh-proxy.com,DIRECT"
+  - "DOMAIN-SUFFIX,gh-proxy.org,DIRECT"
   - "DOMAIN-SUFFIX,ghfast.top,DIRECT"
   - "DOMAIN-SUFFIX,tailscale.com,DIRECT"
   - "DOMAIN-SUFFIX,cdfile.org,DIRECT"
